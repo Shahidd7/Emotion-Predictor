@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion AI | Bidirectional GRU Classifier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <nav>
+        <div class="logo">Emotion<span>AI</span></div>
+        <div class="nav-links">
+            <a href="#playground">Playground</a>
+            <a href="#architecture">Architecture</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Understand Human Emotion <br>through Text</h1>
+            <p>Powered by a custom Bidirectional GRU Neural Network utilizing GloVe Embeddings to classify text into 6 core emotions with 92% accuracy.</p>
+            <div class="tech-stack">
+                <div class="tech-badge">TensorFlow / Keras</div>
+                <div class="tech-badge">FastAPI</div>
+                <div class="tech-badge">Bi-GRU</div>
+                <div class="tech-badge">GloVe 300d</div>
+            </div>
+        </div>
+
+        <div class="dashboard" id="playground">
+            <div class="input-section">
+                <h3>Enter text to analyze</h3>
+                <textarea class="input-box" id="textInput" rows="4" placeholder="e.g., I can't believe how happy I am right now, this is amazing!"></textarea>
+                <div class="actions">
+                    <div class="examples">
+                        <button class="example-chip" onclick="fillExample(0)">"I feel terrified..."</button>
+                        <button class="example-chip" onclick="fillExample(1)">"I am furious..."</button>
+                        <button class="example-chip" onclick="fillExample(2)">"I feel romantic..."</button>
+                    </div>
+                    <button class="predict-btn" id="predictBtn" onclick="predictEmotion()">Predict Emotion</button>
+                </div>
+            </div>
+
+            <div class="result-area" id="resultArea">
+                <div class="result-empty" id="emptyState">
+                    <div>🧠</div>
+                    <p>Awaiting input. The neural network is ready.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats" id="architecture">
+            <div class="stat-card">
+                <div class="stat-value">92%</div>
+                <div class="stat-label">Validation Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">300d</div>
+                <div class="stat-label">GloVe Embedding Size</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Emotion Classes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">16k</div>
+                <div class="stat-label">Training Samples</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Built with FastAPI, TensorFlow & Keras. Model trained on dair-ai/emotion dataset.
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
