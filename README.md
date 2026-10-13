@@ -12,11 +12,11 @@ A deep learning web application that classifies text into six core emotions: **s
 
 #### Text 
 
-![Text](Images/text.png)
+![Text](Images/Text.png)
 
 #### Emotion Prediction Result
 
-![Emotion Prediction ](Images/emotion.png)
+![Emotion Prediction ](Images/Emotion.png)
 
 </details>
 
